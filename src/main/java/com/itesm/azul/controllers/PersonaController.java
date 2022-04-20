@@ -22,7 +22,7 @@ public class PersonaController {
     //Create
     //insert a tuple
     @PostMapping("/save")
-    public Persona save(@RequestBody Persona persona) throws Exception{
+    public PersonDTO save(@RequestBody PersonDTO persona) throws Exception{
         personaService.createPersona(persona);
         return persona;
     }

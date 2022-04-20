@@ -15,8 +15,12 @@ public class PersonaService {
     @Autowired
     PersonaRepository personaRepository;
     //CREATE
-    public void createPersona(final Persona persona){
-        personaRepository.save(persona);
+    public void createPersona(final PersonDTO persona){
+        Persona p = new Persona();
+        p.setEdad(persona.getEdad());
+        p.setPersonaID(persona.getPersonaID());
+        p.setNombre(persona.getNombre());
+        personaRepository.save(p);
     }
     //READ
     public Iterable<Persona> lista(){
